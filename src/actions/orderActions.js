@@ -36,7 +36,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(`https://backend-production-2614.up.railway.app/api/orders`, order, config);
+    const { data } = await axios.post(`https://backend-production-9c9d.up.railway.app/api/orders`, order, config);
 
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: data });
   } catch (err) {
@@ -64,7 +64,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`https://backend-production-2614.up.railway.app/api/orders/${id}`, config);
+    const { data } = await axios.get(`https://backend-production-9c9d.up.railway.app/api/orders/${id}`, config);
 
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
   } catch (err) {
@@ -95,7 +95,7 @@ export const payOrder =
       };
 
       const { data } = await axios.put(
-        `https://backend-production-2614.up.railway.app/api/orders/${orderId}/pay`,
+        `https://backend-production-9c9d.up.railway.app/api/orders/${orderId}/pay`,
         paymentResult,
         config
       );
@@ -127,7 +127,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`https://backend-production-2614.up.railway.app/api/orders/myorders`, config);
+    const { data } = await axios.get(`https://backend-production-9c9d.up.railway.app/api/orders/myorders`, config);
 
     dispatch({ type: ORDER_MY_LIST_SUCCESS, payload: data });
   } catch (err) {
@@ -155,7 +155,7 @@ export const listOrders = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`https://backend-production-2614.up.railway.app/api/orders`, config);
+    const { data } = await axios.get(`https://backend-production-9c9d.up.railway.app/api/orders`, config);
 
     dispatch({ type: ORDER_LIST_SUCCESS, payload: data });
   } catch (err) {
@@ -185,7 +185,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `https://backend-production-2614.up.railway.app/api/orders/${order._id}/deliver`,
+      `https://backend-production-9c9d.up.railway.app/api/orders/${order._id}/deliver`,
       order,
       config
     );
